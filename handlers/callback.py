@@ -1,6 +1,6 @@
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from config import bot, dp
+from config import bot
 
 # перехватчик нажатия кнопки
 async def quiz_2(call: types.CallbackQuery):
@@ -16,7 +16,7 @@ async def quiz_2(call: types.CallbackQuery):
         'диктор канала "Мастерская настроения"',
         'оптимус прайм последний прайм'
     ]
-    # photo = open('media/img.png', 'rb')
+    # photo = open('media/Bat.jpg', 'rb')
     # await bot.send_photo(call.from_user.id, photo=photo)
     await bot.send_poll(
         chat_id=call.from_user.id,
@@ -39,7 +39,7 @@ async def quiz_3(call: types.CallbackQuery):
         'Филосораптор',
         'Доге',
     ]
-    # photo = open('large_p18e64la397s51qt3prjdhbbal3.jpg', 'rb')
+    # photo = open('Bat.jpg', 'rb')
     # await bot.send_photo(call.from_user.id, photo=photo)
     await bot.send_poll(
         chat_id=call.from_user.id,

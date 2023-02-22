@@ -1,8 +1,8 @@
 from aiogram import types, Dispatcher
-from config import bot, dp
+from config import bot
 
 
-async def echo(message: types.Message):
+async def bad_word(message: types.Message):
     if message.chat.type != 'private':
         bad_words = ['балбес', 'урод','дурак']
         username = f'{message.from_user.username}' \
@@ -16,8 +16,7 @@ async def echo(message: types.Message):
     if message.text.startswith('.') and message.reply_to_message:
         await bot.pin_chat_message(message.chat.id, message.message_id)
 
-    if message.text == 'game':
-        await bot.send_dice(message.chat.id)
 
 def register_handlers_extra(dp: Dispatcher):
-    dp.register_message_handler(echo)
+    dp.register_message_handler(bad_word)
+

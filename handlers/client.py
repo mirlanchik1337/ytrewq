@@ -1,6 +1,6 @@
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from config import bot, dp
+from config import bot
 from keybards.client_kb import start_markup
 
 
@@ -9,10 +9,6 @@ async def start_handler(message: types.Message):
                            reply_markup=start_markup)
     # await message.answer('это ансфер')
     # await message.reply(message.from_user.first_name)
-
-
-async def info(message: types.Message):
-    await message.reply('Конец')
 
 
 # опросник\викторина
