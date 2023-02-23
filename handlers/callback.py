@@ -16,9 +16,10 @@ async def quiz_2(call: types.CallbackQuery):
         'диктор канала "Мастерская настроения"',
         'оптимус прайм последний прайм'
     ]
-    # photo = open('media/Bat.jpg', 'rb')
+    # photo = open('images/11231.jpeg', 'rb')
     # await bot.send_photo(call.from_user.id, photo=photo)
     await bot.send_poll(
+
         chat_id=call.from_user.id,
         question=ques,
         options=answer,
@@ -30,7 +31,8 @@ async def quiz_2(call: types.CallbackQuery):
         reply_markup=markup
     )
 
-
+# photo = open('images/11231.jpeg', 'rb')
+# await bot.send_photo(call.from_user.id, photo=photo)
 async def quiz_3(call: types.CallbackQuery):
     ques = 'откуда мем?'
     answer = [
@@ -39,7 +41,7 @@ async def quiz_3(call: types.CallbackQuery):
         'Филосораптор',
         'Доге',
     ]
-    # photo = open('Bat.jpg', 'rb')
+    # photo = open('images/doge.jpeg', 'rb')
     # await bot.send_photo(call.from_user.id, photo=photo)
     await bot.send_poll(
         chat_id=call.from_user.id,
@@ -49,8 +51,7 @@ async def quiz_3(call: types.CallbackQuery):
         type='quiz',
         correct_option_id=3,
         explanation="it's Доге, you win!",
-        open_period=15
-    )
+        open_period=15)
 
 
 def register_handlers_callback(dp: Dispatcher):

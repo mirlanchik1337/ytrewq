@@ -15,6 +15,9 @@ async def ban(message: types.Message):
             pinned_message = await bot.send_message(message.chat.id, text)
             await bot.pin_chat_message(message.chat.id, pinned_message.message_id)
 
+    else:
+        await message.answer("Пиши в группе")
+
 def register_handlers_admin(dp: Dispatcher):
     dp.register_message_handler(ban, commands=['ban'], commands_prefix ='!/')
 

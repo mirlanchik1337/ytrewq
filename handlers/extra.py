@@ -4,7 +4,7 @@ from config import bot
 
 async def bad_word(message: types.Message):
     if message.chat.type != 'private':
-        bad_words = ['балбес', 'урод','дурак']
+        bad_words = ['балбес', 'урод', 'дурак']
         username = f'{message.from_user.username}' \
             if message.from_user.username is not None else message.from_user.full_name
 
@@ -21,6 +21,8 @@ async def bad_word(message: types.Message):
         if message.text.startswith('.') and message.reply_to_message:
             await bot.pin_chat_message(message.chat.id, message.message_id)
 
+    else:
+        await message.answer("Пиши в группе")
 
 def register_handlers_extra(dp: Dispatcher):
     dp.register_message_handler(bad_word)
