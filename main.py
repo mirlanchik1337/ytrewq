@@ -1,5 +1,5 @@
 from aiogram import executor  # для запуска бота
-from handlers import client, callback, extra, admin
+from handlers import client, callback, admin, extra
 from config import dp
 import logging
 

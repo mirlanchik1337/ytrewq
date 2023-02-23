@@ -1,6 +1,6 @@
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from config import bot
+from config import bot, dp
 from keybards.client_kb import start_markup
 
 

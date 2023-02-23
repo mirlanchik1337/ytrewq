@@ -13,10 +13,14 @@ async def bad_word(message: types.Message):
                 await bot.delete_message(message.chat.id, message.message_id)
                 await message.answer(f'Не матерись {username}')
 
-    if message.text.startswith('.') and message.reply_to_message:
-        await bot.pin_chat_message(message.chat.id, message.message_id)
+        if message.text == 'python':
+            text = f'У тебя все получиться {message.from_user.full_name}'
+            await bot.send_message(message.chat.id, text)
+            await bot.send_dice(message.chat.id, emoji='🎰')
+
+        if message.text.startswith('.') and message.reply_to_message:
+            await bot.pin_chat_message(message.chat.id, message.message_id)
 
 
 def register_handlers_extra(dp: Dispatcher):
     dp.register_message_handler(bad_word)
-

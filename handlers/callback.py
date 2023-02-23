@@ -1,6 +1,6 @@
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from config import bot
+from config import bot, dp
 
 # перехватчик нажатия кнопки
 async def quiz_2(call: types.CallbackQuery):
