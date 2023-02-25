@@ -5,7 +5,7 @@ from config import bot, dp
 # перехватчик нажатия кнопки
 async def quiz_2(call: types.CallbackQuery):
     markup = InlineKeyboardMarkup()
-    button2 = InlineKeyboardButton('next', callback_data='button2')
+    button2 = InlineKeyboardButton('next2', callback_data='button2')
     markup.add(button2)
     ques = 'кто это?'
     answer = [
@@ -31,7 +31,8 @@ async def quiz_2(call: types.CallbackQuery):
         reply_markup=markup
     )
 
-# photo = open('images/11231.jpeg', 'rb')
+
+# photo = open('images/doge.jpeg', 'rb')
 # await bot.send_photo(call.from_user.id, photo=photo)
 async def quiz_3(call: types.CallbackQuery):
     ques = 'откуда мем?'
@@ -41,8 +42,7 @@ async def quiz_3(call: types.CallbackQuery):
         'Филосораптор',
         'Доге',
     ]
-    # photo = open('images/doge.jpeg', 'rb')
-    # await bot.send_photo(call.from_user.id, photo=photo)
+
     await bot.send_poll(
         chat_id=call.from_user.id,
         question=ques,

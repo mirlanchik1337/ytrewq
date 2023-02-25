@@ -1,7 +1,7 @@
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config import bot, dp
-from keybards.client_kb import start_markup
+from keyboards.client_kb import start_markup
 
 
 async def start_handler(message: types.Message):

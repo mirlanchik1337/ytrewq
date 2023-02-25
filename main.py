@@ -1,11 +1,12 @@
 from aiogram import executor  # для запуска бота
-from handlers import client, callback, admin, extra
+from handlers import client, callback, admin, fsm_anketa, extra
 from config import dp
 import logging
 
 client.register_handlers_client(dp)
 callback.register_handlers_callback(dp)
 admin.register_handlers_admin(dp)
+fsm_anketa.register_handlers_anketa(dp)
 extra.register_handlers_extra(dp)
 
 
