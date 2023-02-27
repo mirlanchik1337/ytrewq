@@ -1,12 +1,13 @@
-from aiogram import Bot, Dispatcher
-from decouple import config
+from aiogram import Dispatcher, Bot
+from aiogram.dispatcher import storage
+from dotenv import load_dotenv
+import os
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
+
 
 storage = MemoryStorage()
 
-TOKEN = config('TOKEN')
-
-bot = Bot(TOKEN)
-dp = Dispatcher(bot=bot, storage=storage)
-ADMINS = (5465640772, )
-
+load_dotenv()
+bot = Bot(token=os.getenv('BOT_TOKEN'))
+db = Dispatcher(bot=bot, storage=storage)
+ADMIN = [5416111170, 5416111170]

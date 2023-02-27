@@ -24,5 +24,5 @@ async def bad_word(message: types.Message):
     else:
         await message.answer("Пиши в группе")
 
-def register_handlers_extra(dp: Dispatcher):
-    dp.register_message_handler(bad_word)
+def register_handlers_extra(db: Dispatcher):
+    db.register_message_handler(bad_word)

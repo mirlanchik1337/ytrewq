@@ -1,6 +1,6 @@
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from config import bot, dp
+from config import bot, db
 from keyboards.client_kb import start_markup
 
 
@@ -41,6 +41,6 @@ async def quiz_1(message: types.Message):
         reply_markup=markup
     )
 
-def register_handlers_client(dp: Dispatcher):
-    dp.register_message_handler(start_handler, commands=['start', 'hello'])
-    dp.register_message_handler(quiz_1, commands=['quiz'])
+def register_handlers_client(db: Dispatcher):
+    db.register_message_handler(start_handler, commands=['start', 'hello'])
+    db.register_message_handler(quiz_1, commands=['quiz'])

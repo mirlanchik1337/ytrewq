@@ -1,15 +1,16 @@
 from aiogram import executor  # для запуска бота
 from handlers import client, callback, admin, fsm_anketa, extra
-from config import dp
+from config import db
 import logging
 
-client.register_handlers_client(dp)
-callback.register_handlers_callback(dp)
-admin.register_handlers_admin(dp)
-fsm_anketa.register_handlers_anketa(dp)
-extra.register_handlers_extra(dp)
+client.register_handlers_client(db)
+callback.register_handlers_callback(db)
+admin.register_handlers_admin(db)
+fsm_anketa.register_handlers_anketa(db)
+extra.register_handlers_extra(db)
+
 
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
-    executor.start_polling(dp, skip_updates=True)
+    executor.start_polling(db, skip_updates=True)

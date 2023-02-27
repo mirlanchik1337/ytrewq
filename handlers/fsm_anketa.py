@@ -78,11 +78,11 @@ async def load_photo(message: types.Message, state: FSMContext):
         await state.finish()
 
 
-def register_handlers_anketa(dp: Dispatcher):
-    dp.register_message_handler(fsm_start, commands=['reg'])
-    dp.register_message_handler(load_name, state=FSMAdmin.name)
-    dp.register_message_handler(load_age, state=FSMAdmin.age)
-    dp.register_message_handler(load_gender, state=FSMAdmin.gender)
-    dp.register_message_handler(load_region, state=FSMAdmin.region)
-    dp.register_message_handler(load_photo, state=FSMAdmin.photo,
+def register_handlers_anketa(db: Dispatcher):
+    db.register_message_handler(fsm_start, commands=['reg'])
+    db.register_message_handler(load_name, state=FSMAdmin.name)
+    db.register_message_handler(load_age, state=FSMAdmin.age)
+    db.register_message_handler(load_gender, state=FSMAdmin.gender)
+    db.register_message_handler(load_region, state=FSMAdmin.region)
+    db.register_message_handler(load_photo, state=FSMAdmin.photo,
                                 content_types=['photo'])
